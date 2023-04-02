@@ -1,0 +1,61 @@
+Q1)
+
+var fullWordList = ['1', '2', '3', '4', '5'];
+var wordsToRemove = ['1', '2', '3'];
+
+// Find duplicate values
+var duplicates = fullWordList.filter(function(item) {
+  return wordsToRemove.includes(item);
+});
+
+// Find same values
+var sameValues = fullWordList.filter(function(item) {
+  return !wordsToRemove.includes(item);
+});
+
+console.log("Duplicate values: " + duplicates); // Output: Duplicate values: 1,2,3
+console.log("Same values: " + sameValues); // Output: Same values: 4,5
+
+Q2)
+
+const word = '00000111110101001111100001001';
+let longestChain = 0;
+let currentChain = 0;
+let currentLetter = '';
+
+for (let i = 0; i < word.length; i++) {
+  if (word[i] === currentLetter) {
+    currentChain++;
+    if (currentChain > longestChain) {
+      longestChain = currentChain;
+    }
+  } else {
+    currentLetter = word[i];
+    currentChain = 1;
+  }
+}
+
+console.log("Length of longest consecutive chain of letters: " + longestChain); // Output: Length of longest consecutive chain of letters: 5
+
+Q3)
+
+let obj1 = { "greeting": "hello" };
+let obj2 = obj1;
+obj1["greeting"] = "Bye";
+console.log(obj1); // { greeting: 'Bye' }
+console.log(obj2); // { greeting: 'Bye' }
+
+Q4)
+
+console.log("7" > 7) // false
+console.log("2">"21") // false
+console.log("KL">"S") // false
+
+Q5)
+
+function average(a, b) {
+return a + b / 2;
+}
+console.log(average(2, 1)); // 2.5
+
+
